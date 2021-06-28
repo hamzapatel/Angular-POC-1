@@ -1,0 +1,29 @@
+<div class="container">
+    <ng-container *ngIf="flag; else smallTitle">
+        <h1>Users Details </h1>
+    </ng-container>
+    <ng-template #smallTitle>
+        <h3>Users Details</h3>
+    </ng-template>
+    <div style="display: flex;">
+        <label class="switch">
+            <input type="checkbox" [(ngModel)]="flag">
+            <span class="slider round"></span>
+          </label>&nbsp;<h4>Toggle</h4>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.firstName}}</td>
+                <td>{{user.age}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Source Keys</h2>
+    <ul class="list-group">
+        <li
+            class="list-group-item"
+            *ngFor="let sk of sourceKeys"
+            (click)="selectedSourceKey(sk)"
+        >{{sk}}</li>
+    </ul>
+    <app-well
+        #wellComponent
+        (addWell)="addWell($event)"
+    ></app-well>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Source Key</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let well of wells" >
+                <td>{{well.name}}</td>
+                <td [ngClass]="{'green': well.type === 'rls','red' : well.type === 'esp'}">{{well.type}}</td>
+                <td>{{well.sourceKey}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

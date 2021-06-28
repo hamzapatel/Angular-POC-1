@@ -1,0 +1,40 @@
+<div class="container">
+    <h1>Add well</h1>
+    <form  [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="name"
+                id="name"
+                placeholder="Enter Name"
+            >
+        </div>
+        <div class="form-group">
+            <label for="type">Type</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="type"
+                id="type"
+                placeholder="Type"
+            >
+        </div>
+        <div class="form-group">
+            <label for="source">Source Key</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="sourceKey"
+                id="source"
+                placeholder="Source Key"
+            >
+        </div>
+        <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!form.valid"
+        >Add well</button>
+    </form>
+</div>
